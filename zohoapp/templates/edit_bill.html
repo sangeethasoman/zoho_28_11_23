@@ -333,12 +333,12 @@ else{
                 </div>
             <div class="row mb-4  pt-5">
               <div class="col-sm-2"><label for="customer_name">Customer Name*</label></div>
-              <div class="col-sm-10 d-flex align-items-center">
+              <div class="col-sm-10 d-flex align-items-center"> 
                   <select class="form-control text-dark" id="customer_sel" name="customer_name"
                       style="width: 52%;  background: white;">
-                      
+
                       {% for cust in customers %} 
-                      <option value="{{cust.customerName}}" data-pos="{{cust.placeofsupply}}" {% if cust == cust.customerName %} selected="selected"{% endif %}>
+                      <option value="{{cust.customerName}}" data-pos="{{cust.placeofsupply}}" {% if cust.customerName == bill.customer_name %} selected="selected"{% endif %}>
                           {{cust.customerName}}
                       </option>
                       {% endfor %}
@@ -430,8 +430,8 @@ else{
                                 </select></div>
                         </td>
                        
-                        <td class='text-right'><input  type="text" value="{{item.hsn}}"  name='HSN[]' id="HSN{{ forloop.counter }}" placeholder='HSN' style="width: 80px;" 
-                          class='bg-transparent border-0 text-black text-right HSN' style="width: 50px;">
+                        <td class='text-right'><input  type="text" value="{{item.hsn}}"  name='HSN[]' id="HSN{{ forloop.counter }}" placeholder='HSN'  
+                          class='bg-transparent border-0 text-black text-right HSN' style="width: 52px;">
                         </td>
                       
                         <td class='text-right'><input type='number' id='qty{{ forloop.counter }}' style="width: 50px;"
@@ -2599,7 +2599,7 @@ $(document).ready(function () {
                         </select></div>
                 </td>
                 <td class='text-right'><input type='text' id='HSN${RowCount}'
-                  class='bg-transparent border-0 text-black text-right HSN' name='HSN[]' style="width: 50px;" value='0' min="0"></td>
+                  class='bg-transparent border-0 text-black text-right HSN' name='HSN[]' style="width: 52px;" value='0' min="0"></td>
                 
                 <td class='text-right'><input type='number' id='qty${RowCount}' style="width: 50px;"
                         class='bg-transparent border-0 text-black text-right qty' name='quantity[]' value='0' >
@@ -2702,7 +2702,7 @@ $(document).ready(function () {
                 </td>
                 <td style="width: 50%;">
                         <input type='text' id='HSN${RowCount}' value="${currentHSN}" 
-                        class='bg-transparent border-0 text-black text-right HSN' name='HSN[]' style="width: 50px;" value='0' min="0">
+                        class='bg-transparent border-0 text-black text-right HSN' name='HSN[]' style="width: 52px;" value='0' min="0">
                 </td>
                 
                 <td class='text-right'><input type='number' id='qty${RowCount}' value="${currentQuantity}" style="width: 50px;"
